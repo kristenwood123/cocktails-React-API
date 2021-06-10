@@ -8,11 +8,14 @@ import SingleCocktail from './pages/SingleCocktail'
 import Error from './pages/Error'
 //components
 import Navbar from './components/Navbar'
+import { AppProvider } from './context'
 function App() {
   return (
+  <AppProvider>
     <div>
       <h2>App component</h2>
     </div>
+  </AppProvider>
   )
 }
 
