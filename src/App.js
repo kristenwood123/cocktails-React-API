@@ -8,14 +8,28 @@ import SingleCocktail from './pages/SingleCocktail'
 import Error from './pages/Error'
 //components
 import Navbar from './components/Navbar'
-import { AppProvider } from './context'
+
 function App() {
   return (
-  <AppProvider>
     <div>
-      <h2>App component</h2>
+      <Router>
+        <Navbar/>
+        <Switch>
+          <Route exact path='/'>
+            <Home/>
+          </Route>
+           <Route path='/about'>
+            <About/>
+          </Route>
+           <Route path='/cocktail/:id'>
+            <SingleCocktail/>
+          </Route>
+           <Route path='*'>
+            <Error/>
+          </Route>
+        </Switch>
+      </Router>
     </div>
-  </AppProvider>
   )
 }
 
