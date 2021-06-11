@@ -1,6 +1,6 @@
 import React from 'react'
 import Loading from './Loading'
-import CockTail from './Cocktail'
+import Cocktail from './Cocktail'
 import { useGlobalContext } from '../context'
 
 const CocktailList = () => {
@@ -13,9 +13,16 @@ const CocktailList = () => {
    return <h2 className='section-title'>No cocktails matched your search criteria</h2>
   }
   return (
-    <div>
-      <h1>cocktail list</h1>
-    </div>
+    <section className='section'>
+      <h2 className="section-title">
+        cocktails
+      </h2>
+      <div className="cocktails-center">
+      {cocktails.map((drink) => {
+        return <Cocktail key={drink.id} {...drink} /> 
+      })}
+      </div>
+    </section>
   )
 }
 
