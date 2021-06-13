@@ -11,7 +11,7 @@ const AppProvider = ({ children }) => {
   const [cocktails, setCocktails] = useState([])
 
 
-  const fetchDrinks = async () => {
+  const fetchDrinks = useCallback(async () => {
     //EVERY time we fetch/type we set loading to true
     setLoading(true)
     try { 
@@ -46,11 +46,10 @@ const AppProvider = ({ children }) => {
       console.log(e);
       setLoading(false)
     }
-  }
-
+  }, [searchTerm])
   useEffect(() =>{
     fetchDrinks()
-  },[searchTerm, fetchDrinks()])
+  },[searchTerm, fetchDrinks])
 
   return <AppContext.Provider value={{
     loading, 
