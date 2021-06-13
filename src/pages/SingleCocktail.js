@@ -81,11 +81,10 @@ const SingleCocktail = () => {
             <span className='drink-data'>instructions : </span>{instructions}
           </p>
            <p>
-            <span className='drink-data'>ingredients : 
+            <span className='drink-data'>ingredients : </span>
             {ingredients.map((item, index) => {
               return item ? <span key={index}>{item}</span> : null
             })}
-          </span>
           </p>
         </div>
       </div>
